@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    tools:context=".activities.RegisterActivity">
+<ImageView
+    android:layout_marginTop="@dimen/margin_xxlarge"
+    android:src="@mipmap/htaminwine"
+    android:layout_width="wrap_content"
+    android:layout_height="46dp"/>
+    <TextView
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:textSize="25sp"
+        android:fontFamily="@font/poppins"
+        android:text="Track Your Health"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:layout_marginHorizontal="@dimen/margin_medium_3"
+        android:fontFamily="@font/poppins"
+        android:text="With amazing inbuilt tools you can track your progress."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:inputType="text"
+        android:backgroundTint="#F4F4F4"
+        android:layout_height="64dp"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:background="@drawable/background_home_calorie"
+        android:hint="Full Name"
+        android:padding="@dimen/margin_medium" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:backgroundTint="#F4F4F4"
+        android:inputType="phone"
+        android:layout_height="64dp"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:background="@drawable/background_home_calorie"
+        android:hint="Mobile Number"
+        android:padding="@dimen/margin_medium" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:inputType="textEmailAddress"
+        android:layout_height="64dp"
+        android:height="30dp"
+        android:textSize="@dimen/text_regular_3x"
+        android:backgroundTint="#F4F4F4"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:background="@drawable/background_home_calorie"
+        android:hint="Email Address"
+        android:padding="@dimen/margin_medium" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:backgroundTint="#F4F4F4"
+        android:inputType="number"
+        android:layout_height="64dp"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:background="@drawable/background_home_calorie"
+        android:hint="Age"
+        android:padding="@dimen/margin_medium" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:layout_height="64dp"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:background="@drawable/background_home_calorie"
+        android:hint="Password"
+        android:backgroundTint="#F4F4F4"
+        android:padding="@dimen/margin_medium" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:backgroundTint="#FF8473"
+        android:paddingHorizontal="@dimen/margin_xxlarge"
+        android:paddingVertical="@dimen/margin_medium_2"
+        android:shadowColor="@color/black"
+        android:shadowRadius="@integer/material_motion_duration_long_2"
+        android:fontFamily="@font/poppins"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="@dimen/margin_medium_2" />
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvLabelAlreadyAccount"
+            android:text="Already Have An Account?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_toEndOf="@id/tvLabelAlreadyAccount"
+            android:layout_width="wrap_content"
+            android:textColor="#FF8473"
+            android:text="Log In"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</LinearLayout>

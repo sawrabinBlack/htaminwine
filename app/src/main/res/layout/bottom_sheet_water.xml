@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet"
+    android:backgroundTint="#3CB1F8"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+
+
+
+    <ImageView
+        android:id="@+id/ivBottle"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="@dimen/margin_xxlarge"
+        android:src="@mipmap/bottle" />
+
+    <RelativeLayout
+        android:id="@+id/rvWaterTotal"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignBottom="@id/ivBottle"
+        android:layout_marginStart="-50dp"
+        android:layout_toEndOf="@id/ivBottle"
+        android:background="@drawable/background_daily_water"
+        android:elevation="@dimen/margin_medium_2">
+
+        <TextView
+
+            android:id="@+id/tvDailyTargetTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="Daily Target"
+            android:textColor="#22C5FC"
+            android:textSize="@dimen/text_regular" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDailyTargetTitle"
+            android:layout_centerHorizontal="true"
+            android:elevation="@dimen/margin_medium_2"
+            android:text="2600 ml"
+            android:textColor="#309EF6"
+            android:textSize="@dimen/text_heading_1x" />
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/rlTodayWaterProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvWaterTotal"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@drawable/background_bottom_sheet">
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp">
+
+            <LinearLayout
+                android:id="@+id/lltotalWater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/tvTotalWater"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="800"
+                    android:textColor="#3CB1F8"
+                    android:textSize="35sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_toEndOf="@id/tvTotalWater"
+                    android:text="/2600"
+                    android:textSize="35sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lltotalWater"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:text="You have Completed 30 % Daily Target"
+                android:textAlignment="center"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/ciTodayWaterProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:progress="60"
+            android:rotation="180"
+            app:indicatorColor="#3CB1F8"
+            app:indicatorSize="300dp"
+            app:trackColor="@android:color/darker_gray"
+            app:trackCornerRadius="@dimen/margin_medium_3"
+            app:trackThickness="@dimen/margin_medium_3" />
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/margin_xxlarge"
+android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ciTodayWaterProgress"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/rlFirstWaterCup"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/background_workout_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv100ml"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginHorizontal="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:src="@mipmap/glass" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv100ml"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:text="100ml" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlWaterCup2"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/background_workout_time"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv200ml"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginHorizontal="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:src="@mipmap/glass" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv200ml"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:text="200ml" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlWaterCup3"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/background_workout_time"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv500ml"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginHorizontal="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:src="@mipmap/glass" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv500ml"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:text="500ml" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

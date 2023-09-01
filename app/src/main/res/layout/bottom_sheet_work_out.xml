@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:id="@+id/ivWorkOut"
+        android:layout_width="203dp"
+        android:layout_height="203dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/demo_workout" />
+
+    <LinearLayout
+        android:id="@+id/llMealCalorie"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@id/ivWorkOut"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:background="#FFF8EE"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/margin_medium_3"
+        android:weightSum="4">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="#FF8473"
+                android:id="@+id/tvLblCalorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Calories"
+                android:textSize="16sp" />
+
+            <TextView
+                android:textColor="#FF8473"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLblCalorie"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="220g"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="#FF8473"
+                android:id="@+id/tvLblFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Fat"
+                android:textSize="16sp" />
+
+            <TextView
+                android:textColor="#FF8473"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLblFat"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="220g"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="#FF8473"
+                android:id="@+id/tvLblCarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Carbs"
+                android:textSize="16sp" />
+
+            <TextView
+                android:textColor="#FF8473"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLblCarbs"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="220g"
+                android:textSize="24sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="#FF8473"
+                android:id="@+id/tvLabelCalorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Carbs"
+                android:textSize="16sp" />
+
+            <TextView
+                android:textColor="#FF8473"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLabelCalorie"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="220g"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvLabelDescriptionWork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llMealCalorie"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:fontFamily="@font/poppins"
+        android:text="Description"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvDescriptionWork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLabelDescriptionWork"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:fontFamily="@font/poppins"
+        android:lineSpacingExtra="10sp"
+        android:text="Exercise-related injuries are commonly overuse injuries, such as stress fractures, muscle strains, patellar tendinitis or rotator cuff tendinitis, and iliotibial band syndrome (a hip disorder from injury to the thick band that runs from your hip to the outside of your knee). Basically, any activity that involves repetitive movement — running, cycling, hitting a tennis ball, swinging a golf club, etc. — can cause damage to a specific area or areas of tissue over time."
+        android:textSize="@dimen/text_regular" />
+
+    <TextView
+        android:fontFamily="@font/padauk_bold"
+        android:id="@+id/tvLabelWorkOutTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDescriptionWork"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:text="လေ့ကျင့်ခန်းပြုလုပ်ခဲ့သည့်ကြာချိန်"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_regular_2x" />
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/margin_xxlarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLabelWorkOutTime"
+        android:layout_marginHorizontal="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <RelativeLayout
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:id="@+id/rlWorkOut1"
+            android:elevation="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_weight="1"
+            android:background="@drawable/background_workout_time">
+
+            <TextView
+                android:id="@+id/tv10WorkOutTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="10"
+                android:textColor="#FF8473"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv10WorkOutTime"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:text="minutes"
+                android:textColor="#FF8473"
+                android:textSize="@dimen/text_regular_3x" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/rlWorkOut2"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/background_workout_time">
+
+            <TextView
+                android:id="@+id/tv15WorkOutTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="15"
+                android:textColor="#FF8473"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv15WorkOutTime"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:text="minutes"
+                android:textColor="#FF8473"
+                android:textSize="@dimen/text_regular_3x"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlWorkOut3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_weight="1"
+            android:background="@drawable/background_workout_time">
+
+            <TextView
+                android:id="@+id/tv30WorkOutTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="30"
+                android:textColor="#FF8473"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv30WorkOutTime"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:text="minutes"
+                android:textColor="#FF8473"
+                android:textSize="@dimen/text_regular_3x" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:foreground="?attr/selectableItemBackground"
+            android:id="@+id/rlWorkOut4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/background_workout_time">
+
+            <TextView
+                android:id="@+id/tv60WorkOutTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="60"
+                android:textColor="#FF8473"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:text="minutes"
+                android:textColor="#FF8473"
+                android:textSize="@dimen/text_regular_3x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv60WorkOutTime" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+</RelativeLayout>

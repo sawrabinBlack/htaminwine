@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EditProfileActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="@dimen/margin_xxlarge"
+            android:id="@+id/cvEditProfile"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="80dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp">
+            <ImageView
+                android:id="@+id/ivEditProfile"
+                android:scaleType="center"
+                android:src="@mipmap/demo_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_below="@id/cvEditProfile"
+            android:id="@+id/btnUploadPhoto"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#FF8473"
+            android:text="Upload Photo"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_below="@id/btnUploadPhoto"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:id="@+id/tibNameProfile"
+            android:backgroundTint="#F4F4F4"
+            android:layout_height="64dp"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_xxlarge"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:background="@drawable/background_home_calorie"
+            android:hint="Name"
+            android:padding="@dimen/margin_medium" />
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_below="@id/tibNameProfile"
+            android:id="@+id/tibEmailProfile"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:backgroundTint="#F4F4F4"
+            android:layout_height="64dp"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:background="@drawable/background_home_calorie"
+            android:hint="Email"
+            android:padding="@dimen/margin_medium" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/titPassProfile"
+            android:layout_below="@id/tibEmailProfile"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:backgroundTint="#F4F4F4"
+            android:layout_height="64dp"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:background="@drawable/background_home_calorie"
+            android:hint="Password"
+            android:padding="@dimen/margin_medium" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpdateProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:backgroundTint="#FF8473"
+            android:paddingHorizontal="@dimen/margin_xlarge"
+            android:paddingVertical="@dimen/margin_medium_2"
+            android:shadowColor="@color/black"
+            android:shadowRadius="@integer/material_motion_duration_long_2"
+            android:fontFamily="@font/poppins"
+            android:text="Update"
+            android:layout_below="@id/titPassProfile"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="@dimen/margin_medium_2" />
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

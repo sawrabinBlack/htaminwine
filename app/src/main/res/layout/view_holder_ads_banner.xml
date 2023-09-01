@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/background_workout_time"
+    android:layout_height="wrap_content"
+    android:weightSum="2">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.3">
+
+        <TextView
+            android:textColor="#FF8473"
+            android:letterSpacing="0.2"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:id="@+id/tvCaroauselTitle"
+            android:textSize="@dimen/text_regular_2x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ARTICLE" />
+
+        <TextView
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_below="@id/tvCaroauselTitle"
+            android:id="@+id/tvCaroauselHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/signika_semibold"
+            android:text="The pros and cons of fast food"
+            android:textSize="25sp"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:lineSpacingExtra="10dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_marginBottom="@dimen/margin_card_medium_2"
+            android:paddingTop="@dimen/margin_card_medium_2"
+            android:paddingBottom="@dimen/margin_card_medium_2"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_card_medium"
+            android:layout_below="@id/tvCaroauselHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF8473"
+            android:drawableEnd="@drawable/ic_baseline_arrow_right_24"
+            android:text="Read Now" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/carousel_demo" />
+</LinearLayout>

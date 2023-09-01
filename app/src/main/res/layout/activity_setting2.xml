@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SettingActivity">
+<androidx.cardview.widget.CardView
+    android:layout_marginTop="@dimen/margin_xxlarge"
+    android:id="@+id/cvProfilePhoto"
+    android:layout_centerHorizontal="true"
+    app:cardCornerRadius="80dp"
+    android:layout_width="160dp"
+    android:layout_height="160dp">
+    <ImageView
+        android:scaleType="center"
+        android:src="@mipmap/demo_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</androidx.cardview.widget.CardView>
+    <TextView
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/text_heading_1x"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cvProfilePhoto"
+        android:text="Kyaw Kyaw"/>
+    <LinearLayout
+        android:layout_below="@id/cvProfilePhoto"
+        android:id="@+id/llEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_medium_2"
+        android:weightSum="10">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/background_workout_time"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_baseline_person_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_weight="6.5"
+            android:fontFamily="@font/poppins"
+            android:text="Edit Profile"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRecords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llEditProfile"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_medium_2"
+        android:weightSum="10">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/background_workout_time"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_baseline_star_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_weight="6.5"
+            android:fontFamily="@font/poppins"
+            android:text="Records"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llRecords"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_medium_2"
+        android:weightSum="10">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/background_workout_time"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_baseline_settings_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_weight="6.5"
+            android:fontFamily="@font/poppins"
+            android:text="Settings"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lltandC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llSetting"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_medium_2"
+        android:weightSum="10">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/background_workout_time"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_baseline_assignment_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_weight="6.5"
+            android:fontFamily="@font/poppins"
+            android:text="Terms &amp; Privacy Policy"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llLogOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lltandC"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_medium_2"
+        android:weightSum="10">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/background_workout_time"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_baseline_logout_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_weight="6.5"
+            android:fontFamily="@font/poppins"
+            android:text="Log Out"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </LinearLayout>
+</RelativeLayout>

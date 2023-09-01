@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <ImageView
+        android:id="@+id/ivMeal"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_large"
+        android:src="@mipmap/meal_demo" />
+
+    <LinearLayout
+        android:id="@+id/llMealCalorie"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@id/ivMeal"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:background="#FFF8EE"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/margin_medium_3"
+        android:weightSum="4">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="#FF8473"
+                android:id="@+id/tvLblProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Protein"
+                android:textSize="16sp" />
+
+            <TextView
+                android:textColor="#FF8473"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLblProtein"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="220g"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="#FF8473"
+                android:id="@+id/tvLblCalorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Calories"
+                android:textSize="16sp" />
+
+            <TextView
+                android:textColor="#FF8473"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLblCalorie"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="220g"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="#FF8473"
+                android:id="@+id/tvLblFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Fat"
+                android:textSize="16sp" />
+
+            <TextView
+                android:textColor="#FF8473"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLblFat"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="220g"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:textColor="#FF8473"
+                android:id="@+id/tvLblCarbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="Carbs"
+                android:textSize="16sp" />
+
+            <TextView
+                android:textColor="#FF8473"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLblCarbs"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="220g"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvlblDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llMealCalorie"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:fontFamily="@font/padauk_bold"
+        android:text="အသေးစိတ်"
+        android:textSize="22sp" />
+
+    <TextView
+        android:textColor="#A9A9A9"
+        android:id="@+id/tvMealDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvlblDetail"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:lineSpacingExtra="5.4dp"
+        android:text="A hamburger (also burger for short) is a sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bread  Read More..."
+        android:textSize="@dimen/text_regular_2x" />
+    <TextView
+        android:id="@+id/tvIngredientTitle"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:fontFamily="@font/padauk_bold"
+        android:layout_below="@id/tvMealDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ပါဝင်ပစ္စည်များ"
+        android:textSize="22sp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:paddingStart="@dimen/margin_medium_2"
+        android:paddingEnd="@dimen/margin_medium_2"
+        android:clipToPadding="false"
+        android:id="@+id/rvIngredient"
+        android:layout_below="@id/tvIngredientTitle"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvIngredient"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium_3"
+        android:backgroundTint="#FF8473"
+        android:paddingHorizontal="@dimen/margin_medium_2"
+        android:paddingVertical="@dimen/margin_medium_2"
+        android:shadowColor="@color/black"
+        android:shadowRadius="@integer/material_motion_duration_long_2"
+        android:text="ယနေ့စားသောက်ခဲ့သည်"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="@dimen/margin_medium_2" />
+
+</RelativeLayout>
