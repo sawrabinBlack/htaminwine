@@ -12,5 +12,6 @@ data class FoodVO(
     @SerializedName("receipes")
     val receipes: List<String>,
     @SerializedName("nutrient")
-    val nutrient: NutrientVO
+    val nutrient: NutrientVO?,
+    val foodImage: String?
 )

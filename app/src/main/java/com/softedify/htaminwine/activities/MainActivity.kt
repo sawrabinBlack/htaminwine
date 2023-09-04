@@ -1,21 +1,17 @@
 package com.softedify.htaminwine.activities
 
-import android.app.ProgressDialog.show
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.card.MaterialCardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.smarteist.autoimageslider.SliderView
 import com.softedify.htaminwine.R
@@ -24,7 +20,9 @@ import com.softedify.htaminwine.adapters.MealAdapter
 import com.softedify.htaminwine.adapters.MealIngredientsAdapter
 import com.softedify.htaminwine.data.models.HtaminWineModel
 import com.softedify.htaminwine.data.models.HtaminWineModelImpl
+import com.softedify.htaminwine.data.vos.FoodVO
 import com.softedify.htaminwine.delegate.MealDelegate
+import com.softedify.htaminwine.dummy.meals
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -51,6 +49,7 @@ class MainActivity : AppCompatActivity(), MealDelegate {
     var workout2: RelativeLayout? = null
     var workout3: RelativeLayout? = null
     var workout4: RelativeLayout? = null
+    var food : FoodVO?=null
     lateinit var calorieText: TextView
     lateinit var waterText: TextView
     lateinit var workoutText: TextView
@@ -85,10 +84,10 @@ class MainActivity : AppCompatActivity(), MealDelegate {
         val fabWorkOut: FloatingActionButton = findViewById(R.id.fabNewWorkOut)
         val fabWater: FloatingActionButton = findViewById(R.id.fabNewWater)
         val profilePhoto: CardView = findViewById(R.id.cvProfilePhotoMain)
-mModel.createNewDailyRecord(date)
+        mModel.createNewDailyRecord(date)
         mModel.getDailyRecordByDate(date)?.observe(this) {
-            calorieText.text = "${it?.calories?:0}"
-            waterText.text = "${it?.water?:0}"
+            calorieText.text = "${it?.calories ?: 0}"
+            waterText.text = "${it?.water ?: 0}"
             workoutText.text = it?.workout.toString()
         }
         waterCup1?.setOnClickListener {
@@ -152,10 +151,12 @@ mModel.createNewDailyRecord(date)
         mealItemRecyclerView?.adapter = mMealItemAdapter
         mealItemRecyclerView?.layoutManager = GridLayoutManager(this, 3)
 
+
         val mealRecyclerView = mealBottomSheet.findViewById<RecyclerView>(R.id.rvMeal)
         mMealAdapter = MealAdapter(true, this)
         mealRecyclerView?.adapter = mMealAdapter
         mealRecyclerView?.layoutManager = GridLayoutManager(this, 3)
+        mMealAdapter.setCategory(meals)
 
         val ingredientList: RecyclerView? = mealDetailbottomsheet.findViewById(R.id.rvIngredient)
         mealIngredientsAdapter = MealIngredientsAdapter()
@@ -174,19 +175,28 @@ mModel.createNewDailyRecord(date)
 
         val eatButton = mealDetailbottomsheet.findViewById<MaterialButton>(R.id.btnEat)
         eatButton?.setOnClickListener {
+            food?.let {
+                mModel.updateFood(it,date)
+            }
+
             mealDetailbottomsheet.dismiss()
         }
 
 
     }
 
-    override fun tapOnCategory() {
+    override fun tapOnCategory(foodlist: List<FoodVO>) {
+        mMealItemAdapter.setFood(foodlist)
         mealBottomSheet.dismiss()
         mealItemBottomSheet.show()
     }
 
-    override fun tapOnItem() {
+    override fun tapOnItem(foodVO: FoodVO) {
+        food = foodVO
+
         mealItemBottomSheet.dismiss()
         mealDetailbottomsheet.show()
     }
+
+
 }

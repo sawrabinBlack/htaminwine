@@ -33,7 +33,7 @@ object HtaminWineModelImpl : HtaminWineModel, BaseModel() {
     override fun updateFood(food: FoodVO, date: String) {
         val dailyRecord = mLibraryDatabase?.dailyRecordDao()?.getRecordByDate(date)
         dailyRecord?.let {
-            it.calories += food.nutrient.energy ?: 0
+            it.calories += food.nutrient?.energy ?: 0
             mLibraryDatabase?.dailyRecordDao()?.insertSingleRecord(it)
         }
     }
