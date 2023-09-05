@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.softedify.htaminwine.data.vos.DailyRecordVO
 import com.softedify.htaminwine.persistence.daos.DailyRecordDao
 @Database(
-    entities =[DailyRecordVO::class], exportSchema = false, version = 1
+    entities =[DailyRecordVO::class], exportSchema = false, version = 2
 )
 abstract class HtaminWineDatabase : RoomDatabase() {
     companion object {

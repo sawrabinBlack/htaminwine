@@ -14,5 +14,10 @@ data class DailyRecordVO(
     var workout : Int = 0,
     @ColumnInfo
     var calories : Int = 0,
-
+    @ColumnInfo
+    var carbos : Int = 0,
+    @ColumnInfo
+    var protein : Int = 0,
+    @ColumnInfo
+    var fat: Int = 0
 )

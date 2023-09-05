@@ -19,7 +19,7 @@
     <LinearLayout
         android:id="@+id/llMealCalorie"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/ivMeal"
         android:layout_marginTop="@dimen/margin_medium_3"
         android:background="#FFF8EE"
@@ -43,6 +43,7 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tvProteinMeal"
                 android:textColor="#FF8473"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,11 +70,12 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:textAlignment="center"
+                android:id="@+id/tvCalorieMeal"
                 android:textColor="#FF8473"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvLblCalorie"
-                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/poppins"
                 android:text="220g"
                 android:textSize="24sp" />
@@ -96,6 +98,7 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tvFatMeal"
                 android:textColor="#FF8473"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,6 +125,7 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tvCarbsMeal"
                 android:textColor="#FF8473"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

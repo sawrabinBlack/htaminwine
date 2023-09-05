@@ -49,6 +49,16 @@
                     android:textFontWeight="800"
                     android:textSize="@dimen/text_regular_3x"
                     android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnHistory"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:padding="@dimen/margin_card_medium"
+                    android:layout_below="@id/tvlblTotalCalorie"
+                    android:backgroundTint="@android:color/holo_blue_bright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="မှတ်တမ်းကြည့်ရန်"/>
             </RelativeLayout>
 
             <androidx.cardview.widget.CardView

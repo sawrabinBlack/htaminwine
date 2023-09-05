@@ -9,5 +9,7 @@ data class NutrientVO(
     val fat: Int?,
     @SerializedName("energy")
     val energy: Int?,
+    @SerializedName("protein")
+    val protein: Int?,
 ) {
 }

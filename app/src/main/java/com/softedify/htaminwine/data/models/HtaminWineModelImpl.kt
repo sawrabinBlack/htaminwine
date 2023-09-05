@@ -34,6 +34,9 @@ object HtaminWineModelImpl : HtaminWineModel, BaseModel() {
         val dailyRecord = mLibraryDatabase?.dailyRecordDao()?.getRecordByDate(date)
         dailyRecord?.let {
             it.calories += food.nutrient?.energy ?: 0
+            it.carbos +=food.nutrient?.carbo?:0
+            it.fat +=food.nutrient?.fat?:0
+            it.protein +=food.nutrient?.protein?:0
             mLibraryDatabase?.dailyRecordDao()?.insertSingleRecord(it)
         }
     }
@@ -44,5 +47,9 @@ object HtaminWineModelImpl : HtaminWineModel, BaseModel() {
             val dailyRecordVO = DailyRecordVO(date = date)
             mLibraryDatabase?.dailyRecordDao()?.insertSingleRecord(dailyRecordVO)
         }
+    }
+
+    override fun getDailyRecordByDateOneTime(date: String): DailyRecordVO? {
+        return mLibraryDatabase?.dailyRecordDao()?.getRecordByDate(date)
     }
 }

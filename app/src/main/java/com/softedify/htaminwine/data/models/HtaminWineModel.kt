@@ -12,4 +12,5 @@ interface HtaminWineModel {
     fun updateExercise(workout : Int,date: String)
     fun updateFood(food: FoodVO,date: String)
     fun createNewDailyRecord(date: String)
+    fun getDailyRecordByDateOneTime(date: String) : DailyRecordVO?
 }

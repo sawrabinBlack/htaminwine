@@ -1,9 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.History">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_2" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_xxlarge"
+            android:text="Calorie"
+            android:textSize="@dimen/text_heading_1x" />
+
+        <TextView
+            android:id="@+id/tvCalorieHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="1000 kCal"
+            android:textColor="@color/black"
+            android:textFontWeight="30"
+            android:textSize="@dimen/text_heading_2x"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xxlarge"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/lblCarbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carbs" />
+
+                <TextView
+                    android:id="@+id/tvCarbsHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblCarbs"
+                    android:text="80g"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/lblFat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fat" />
+
+                <TextView
+                    android:id="@+id/tvFatHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblFat"
+                    android:text="50g"
+                    android:textColor="@color/black"
+                    android:textFontWeight="80"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/lblProtein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Protein" />
+
+                <TextView
+                    android:id="@+id/tvProteinHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblProtein"
+                    android:text="50g"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_xxlarge"
+            android:background="@drawable/background_history"
+            android:backgroundTint="#fea29b"
+            android:padding="@dimen/margin_medium">
+
+            <ImageView
+                android:id="@+id/ivhistoryDrink"
+                android:layout_width="@dimen/margin_xxlarge"
+                android:layout_height="56dp"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:src="@mipmap/water_bottle" />
+
+            <TextView
+                android:id="@+id/tvWaterHistory"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivhistoryDrink"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:text="100 ml"
+                android:textSize="@dimen/text_heading_1x" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:background="@drawable/background_history"
+            android:backgroundTint="#B2DFFA"
+            android:padding="@dimen/margin_medium">
+
+            <ImageView
+                android:id="@+id/ivhistoryWorkout"
+                android:layout_width="@dimen/margin_xxlarge"
+                android:layout_height="56dp"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:src="@mipmap/weight" />
+
+            <TextView
+                android:id="@+id/tvWorkOutHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivhistoryWorkout"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:text="220 mins"
+                android:textColor="@color/white"
+                android:textFontWeight="50"
+                android:textSize="@dimen/text_heading_1x" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

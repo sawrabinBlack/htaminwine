@@ -4,12 +4,15 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -42,14 +45,22 @@ class MainActivity : AppCompatActivity(), MealDelegate {
     lateinit var mealBottomSheet: BottomSheetDialog
     lateinit var mealItemBottomSheet: BottomSheetDialog
     lateinit var mealDetailbottomsheet: BottomSheetDialog
+    var foodDetailImage: ImageView? = null
+    var foodProtein: TextView? = null
+    var foodCalorie: TextView? = null
+    var foodFat: TextView? = null
+    var foodCarbs: TextView? = null
+    var foodDescription: TextView? = null
     var waterCup1: RelativeLayout? = null
     var waterCup2: RelativeLayout? = null
     var waterCup3: RelativeLayout? = null
+    var waterBottomSheetText :TextView? = null
     var workout1: RelativeLayout? = null
     var workout2: RelativeLayout? = null
     var workout3: RelativeLayout? = null
     var workout4: RelativeLayout? = null
-    var food : FoodVO?=null
+    var food: FoodVO? = null
+    var water: Int = 0
     lateinit var calorieText: TextView
     lateinit var waterText: TextView
     lateinit var workoutText: TextView
@@ -73,10 +84,17 @@ class MainActivity : AppCompatActivity(), MealDelegate {
         waterCup1 = waterBottomSheet.findViewById(R.id.rlFirstWaterCup)
         waterCup2 = waterBottomSheet.findViewById(R.id.rlWaterCup2)
         waterCup3 = waterBottomSheet.findViewById(R.id.rlWaterCup3)
+        waterBottomSheetText = waterBottomSheet.findViewById(R.id.tvTotalWater)
         workout1 = workoutBottomSheet.findViewById(R.id.rlWorkOut1)
         workout2 = workoutBottomSheet.findViewById(R.id.rlWorkOut2)
         workout3 = workoutBottomSheet.findViewById(R.id.rlWorkOut3)
         workout4 = workoutBottomSheet.findViewById(R.id.rlWorkOut4)
+        foodDetailImage = mealDetailbottomsheet.findViewById(R.id.ivMeal)
+        foodProtein = mealDetailbottomsheet.findViewById(R.id.tvProteinMeal)
+        foodCalorie = mealDetailbottomsheet.findViewById(R.id.tvCalorieMeal)
+        foodFat = mealDetailbottomsheet.findViewById(R.id.tvFatMeal)
+        foodCarbs = mealDetailbottomsheet.findViewById(R.id.tvCarbsMeal)
+        foodDescription = mealDetailbottomsheet.findViewById(R.id.tvMealDetail)
         calorieText = findViewById(R.id.tvTotalCalorie)
         waterText = findViewById(R.id.tvWaterAmount)
         workoutText = findViewById(R.id.tvWorkOut)
@@ -86,9 +104,10 @@ class MainActivity : AppCompatActivity(), MealDelegate {
         val profilePhoto: CardView = findViewById(R.id.cvProfilePhotoMain)
         mModel.createNewDailyRecord(date)
         mModel.getDailyRecordByDate(date)?.observe(this) {
-            calorieText.text = "${it?.calories ?: 0}"
-            waterText.text = "${it?.water ?: 0}"
-            workoutText.text = it?.workout.toString()
+            calorieText.text = "${it?.calories ?: 0} kCal"
+            waterText.text = "${it?.water ?: 0} ml"
+            workoutText.text = "${it?.workout} mins"
+            water = it?.water ?: 0
         }
         waterCup1?.setOnClickListener {
             mModel.updateWater(100, date)
@@ -96,12 +115,12 @@ class MainActivity : AppCompatActivity(), MealDelegate {
         }
 
         waterCup2?.setOnClickListener {
-            mModel.updateWater(100, date)
+            mModel.updateWater(200, date)
             waterBottomSheet.dismiss()
         }
 
         waterCup3?.setOnClickListener {
-            mModel.updateWater(100, date)
+            mModel.updateWater(500, date)
             waterBottomSheet.dismiss()
         }
 
@@ -120,11 +139,13 @@ class MainActivity : AppCompatActivity(), MealDelegate {
             workoutBottomSheet.dismiss()
         }
         workout4?.setOnClickListener {
-            mModel.updateExercise(45, date)
+            mModel.updateExercise(60, date)
             workoutBottomSheet.dismiss()
         }
 
-
+        findViewById<Button>(R.id.btnHistory).setOnClickListener {
+            startActivity(History.newIntent(this))
+        }
         profilePhoto.setOnClickListener {
             startActivity(SettingActivity.newIntent(this))
         }
@@ -138,6 +159,7 @@ class MainActivity : AppCompatActivity(), MealDelegate {
         }
 
         fabWater.setOnClickListener {
+            waterBottomSheetText?.text = water.toString()
             waterBottomSheet.show()
         }
         mealDetailbottomsheet.behavior.peekHeight = R.dimen.margin_xxlarge
@@ -176,7 +198,7 @@ class MainActivity : AppCompatActivity(), MealDelegate {
         val eatButton = mealDetailbottomsheet.findViewById<MaterialButton>(R.id.btnEat)
         eatButton?.setOnClickListener {
             food?.let {
-                mModel.updateFood(it,date)
+                mModel.updateFood(it, date)
             }
 
             mealDetailbottomsheet.dismiss()
@@ -193,9 +215,14 @@ class MainActivity : AppCompatActivity(), MealDelegate {
 
     override fun tapOnItem(foodVO: FoodVO) {
         food = foodVO
-
         mealItemBottomSheet.dismiss()
         mealDetailbottomsheet.show()
+        foodDetailImage?.let { Glide.with(this).load(foodVO.foodImage).into(it) }
+        foodCalorie?.text = "${foodVO.nutrient?.energy ?: 0} kCal"
+        foodProtein?.text = "${foodVO.nutrient?.protein ?: 0}g"
+        foodFat?.text = "${foodVO.nutrient?.fat ?: 0}g"
+        foodCarbs?.text = "${foodVO.nutrient?.carbo ?: 0}g"
+        foodDescription?.text = foodVO.description ?: ""
     }
 
 
